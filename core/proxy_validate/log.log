@@ -1,0 +1,1595 @@
+2019-07-12 13:21:01 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='1.197.204.66', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001344D5E51D0>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000001344D5E51D0>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='1.197.204.66', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001344D5E51D0>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='1.197.204.66', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001344D5E51D0>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+2019-07-12 13:21:03 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001344D5E5160>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001344D5E5160>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001344D5E5160>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001344D5E5160>, 'Connection to 1.197.204.66 timed out. (connect timeout=2)'))
+2019-07-12 13:21:29 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='182.34.34.213', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233EB22D0F0>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x00000233EB22D0F0>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='182.34.34.213', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233EB22D0F0>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='182.34.34.213', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233EB22D0F0>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+2019-07-12 13:21:31 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000233EA284A20>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x00000233EA284A20>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000233EA284A20>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000233EA284A20>, 'Connection to 182.34.34.213 timed out. (connect timeout=2)'))
+2019-07-12 13:42:55 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='121.15.254.156', port=888): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000179AC03D0F0>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x00000179AC03D0F0>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='121.15.254.156', port=888): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000179AC03D0F0>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='121.15.254.156', port=888): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000179AC03D0F0>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+2019-07-12 13:42:57 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000179AB054A58>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x00000179AB054A58>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000179AB054A58>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00000179AB054A58>, 'Connection to 121.15.254.156 timed out. (connect timeout=2)'))
+2019-07-12 19:41:48 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='68.232.175.189', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000019E7920B1D0>, 'Connection to 68.232.175.189 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x0000019E7920B1D0>, 'Connection to 68.232.175.189 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='68.232.175.189', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000019E7920B1D0>, 'Connection to 68.232.175.189 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='68.232.175.189', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000019E7920B1D0>, 'Connection to 68.232.175.189 timed out. (connect timeout=2)'))
+2019-07-12 19:42:11 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E7E07CD278>, 'Connection to 192.241.136.113 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E7E07CD278>, 'Connection to 192.241.136.113 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E7E07CD278>, 'Connection to 192.241.136.113 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E7E07CD278>, 'Connection to 192.241.136.113 timed out. (connect timeout=2)'))
+2019-07-12 19:44:26 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='177.66.55.108', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000020D75DBD128>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x0000020D75DBD128>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='177.66.55.108', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000020D75DBD128>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='177.66.55.108', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000020D75DBD128>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+2019-07-12 19:44:28 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020D74DF4AC8>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020D74DF4AC8>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020D74DF4AC8>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020D74DF4AC8>, 'Connection to 177.66.55.108 timed out. (connect timeout=2)'))
+2019-07-12 19:45:59 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001C5B7E8D2B0>, 'Connection to 95.181.37.114 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001C5B7E8D2B0>, 'Connection to 95.181.37.114 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001C5B7E8D2B0>, 'Connection to 95.181.37.114 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001C5B7E8D2B0>, 'Connection to 95.181.37.114 timed out. (connect timeout=2)'))
+2019-07-13 17:49:44 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='118.24.88.240', port=1080): Read timed out. (read timeout=2)
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='118.24.88.240', port=1080): Read timed out. (read timeout=2)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='118.24.88.240', port=1080): Read timed out. (read timeout=2)
+2019-07-13 17:49:46 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 308, in connect
+    self._tunnel()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 906, in _tunnel
+    (version, code, message) = response._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-07-13 17:50:00 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='163.204.241.103', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002664D1CD0F0>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000002664D1CD0F0>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='163.204.241.103', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002664D1CD0F0>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='163.204.241.103', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002664D1CD0F0>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+2019-07-13 17:50:02 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002664C1F4AC8>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000002664C1F4AC8>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002664C1F4AC8>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002664C1F4AC8>, 'Connection to 163.204.241.103 timed out. (connect timeout=2)'))
+2019-07-13 17:50:13 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='183.129.244.16', port=11492): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002123C2AD160>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000002123C2AD160>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='183.129.244.16', port=11492): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002123C2AD160>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='183.129.244.16', port=11492): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002123C2AD160>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+2019-07-13 17:50:15 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002123B2D4AC8>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000002123B2D4AC8>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002123B2D4AC8>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002123B2D4AC8>, 'Connection to 183.129.244.16 timed out. (connect timeout=2)'))
+2019-07-13 17:50:30 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 308, in connect
+    self._tunnel()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 906, in _tunnel
+    (version, code, message) = response._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-07-13 17:51:03 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='119.57.156.90', port=53281): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001EDE837C198>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000001EDE837C198>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.57.156.90', port=53281): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001EDE837C198>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='119.57.156.90', port=53281): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001EDE837C198>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+2019-07-13 17:51:05 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001EDE73C4AC8>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001EDE73C4AC8>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001EDE73C4AC8>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001EDE73C4AC8>, 'Connection to 119.57.156.90 timed out. (connect timeout=2)'))
+2019-07-13 17:51:23 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='175.102.3.98', port=8089): Read timed out. (read timeout=2)
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='175.102.3.98', port=8089): Read timed out. (read timeout=2)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='175.102.3.98', port=8089): Read timed out. (read timeout=2)
+2019-07-13 17:51:25 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002B39712B198>, 'Connection to 175.102.3.98 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000002B39712B198>, 'Connection to 175.102.3.98 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002B39712B198>, 'Connection to 175.102.3.98 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000002B39712B198>, 'Connection to 175.102.3.98 timed out. (connect timeout=2)'))
+2019-07-13 17:51:39 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='124.205.155.146', port=9090): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001E0C0D8D0F0>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000001E0C0D8D0F0>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='124.205.155.146', port=9090): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001E0C0D8D0F0>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='124.205.155.146', port=9090): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001E0C0D8D0F0>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+2019-07-13 17:51:41 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E0BFDD4AC8>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E0BFDD4AC8>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E0BFDD4AC8>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001E0BFDD4AC8>, 'Connection to 124.205.155.146 timed out. (connect timeout=2)'))
+2019-07-13 17:55:41 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='119.51.217.115', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000018A9133D0F0>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x0000018A9133D0F0>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.51.217.115', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000018A9133D0F0>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='119.51.217.115', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000018A9133D0F0>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+2019-07-13 17:55:43 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000018A90384AC8>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x0000018A90384AC8>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000018A90384AC8>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0000018A90384AC8>, 'Connection to 119.51.217.115 timed out. (connect timeout=2)'))
+2019-07-13 17:55:51 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='175.23.6.112', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001CF62C8D160>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000001CF62C8D160>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='175.23.6.112', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001CF62C8D160>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='175.23.6.112', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001CF62C8D160>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+2019-07-13 17:55:53 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001CF61CA4AC8>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    (self.host, self.timeout))
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.VerifiedHTTPSConnection object at 0x000001CF61CA4AC8>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001CF61CA4AC8>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x000001CF61CA4AC8>, 'Connection to 175.23.6.112 timed out. (connect timeout=2)'))
+2019-07-13 18:09:03 httpbin_validator.py, [line:68] ERROR: HTTPConnectionPool(host='198.27.67.35', port=3128): Read timed out. (read timeout=2)
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='198.27.67.35', port=3128): Read timed out. (read timeout=2)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='198.27.67.35', port=3128): Read timed out. (read timeout=2)
+2019-07-13 18:23:30 httpbin_validator.py, [line:68] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 805, in _prepare_proxy
+    conn.connect()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 308, in connect
+    self._tunnel()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 906, in _tunnel
+    (version, code, message) = response._read_status()
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:/ipproxy/core/proxy_validate/httpbin_validator.py", line 48, in __check_http_proxies
+    response = requests.get(test_url, headers=get_request_headers(), timeout=settings.TIMEOUT, proxies=proxies)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\DreamShen\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
